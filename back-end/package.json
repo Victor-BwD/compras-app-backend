@@ -11,7 +11,7 @@
     "dev": "nodemon src/infra/server/index.ts",
     "populate": "ts-node src/helpers/seeder/category/index.ts",
     "postListProduct": "ts-node src/helpers/seeder/shopping-list/index.ts",
-    "start": "node /dist/infra/server/index.js",
+    "start": "node ./dist/infra/server/index.js",
     "test": "tsc && node dist/src/infra/server/index && jest",
     "jest": "tsc && jest"
   },
