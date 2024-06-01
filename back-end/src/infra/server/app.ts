@@ -6,10 +6,19 @@ import { shoppingListRouter } from "../routes/shopping-list";
 import { categoriesRouter } from "../routes/categories";
 
 const corsOptions = {
-  origin: ["http://localhost:3000", "http://localhost:8080", "http://localhost:5173", "https://compras-app-frontend.vercel.app/"],
+  origin: [
+    "http://localhost:3000",
+    "http://localhost:8080",
+    "http://localhost:5173",
+    "https://compras-app-frontend.vercel.app",
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"], 
 };
 
 const app = express();
+
+app.use(cors(corsOptions));
 
 app.use((req, res, next) => {
   res.setHeader("Accept", "application/json");
@@ -17,7 +26,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 app.use(productRouter);
