@@ -6,7 +6,7 @@ import { shoppingListRouter } from "../routes/shopping-list";
 import { categoriesRouter } from "../routes/categories";
 
 const corsOptions = {
-  origin: ["http://localhost:3000", "http://localhost:8080", "http://localhost:5173"],
+  origin: ["http://localhost:3000", "http://localhost:8080", "http://localhost:5173", "https://compras-app-frontend.vercel.app/"],
 };
 
 const app = express();
