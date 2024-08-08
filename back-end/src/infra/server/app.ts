@@ -13,18 +13,13 @@ const corsOptions = {
     "https://compras-app-frontend.vercel.app",
   ],
   methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"], 
+  allowedHeaders: ["Content-Type", "Authorization"],
+  exposedHeaders: ["X-Total-Count"],
 };
 
 const app = express();
 
 app.use(cors(corsOptions));
-
-app.use((req, res, next) => {
-  res.setHeader("Accept", "application/json");
-  res.set("Access-Control-Expose-Headers", "X-Total-Count");
-  next();
-});
 
 app.use(bodyParser.json());
 
